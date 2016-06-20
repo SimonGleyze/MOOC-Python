@@ -314,7 +314,7 @@ while abs(remainingBalance) >= epsilon:
             newbalance = remainingBalance - minimumMonthlyPayment
             remainingBalance = newbalance + (annualInterestRate / 12.0) * newbalance
             x += 1
-    if abs(remainingBalance) > 0:
+    if abs(remainingBalance) >= epsilon:
         low = test
     else:
         high = test
