@@ -260,6 +260,8 @@ annualInterestRate = 0.2
 import math
 remainingBalance = balance
 x = 0
+y = 0
+z = 0
 test = 0
 while test < balance and remainingBalance > 0:
     if x < 12:
@@ -268,15 +270,21 @@ while test < balance and remainingBalance > 0:
             newbalance = remainingBalance - minimumMonthlyPayment
             remainingBalance = newbalance + (annualInterestRate / 12.0) * newbalance
             x += 1
+            y += minimumMonthlyPayment
+            z += remainingBalance
         test += 1
     else:
         remainingBalance = balance
         x = 0
+        y = 0
+        z = 0
         for num in range(x, 12):
             minimumMonthlyPayment = test
             newbalance = remainingBalance - minimumMonthlyPayment
             remainingBalance = newbalance + (annualInterestRate / 12.0) * newbalance
             x += 1
+            y += minimumMonthlyPayment
+            z += remainingBalance
         test += 1
 lowestPayment = math.ceil(minimumMonthlyPayment/10.0)*10.0
 print ('Lowest Payment: ' + str(int(lowestPayment)))
