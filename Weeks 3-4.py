@@ -50,7 +50,7 @@ def gcdRecur(a, b):
         return max(a, b)
     elif max(a, b)%min(a, b) == 0:
         return min(a, b)
-    return gcdRecur(max(a, b), max(a, b)%min(a, b))
+    return gcdRecur(min(a, b), max(a, b)%min(a, b))
 
 #Towers of Hanoi
 def printMove(fr, to):
